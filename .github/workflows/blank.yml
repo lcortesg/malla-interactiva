@@ -24,9 +24,7 @@ jobs:
     - uses: actions/setup-node@v1.4.3
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run:
-        npx terser ./js/init.js ./js/malla.js ./js/ramo.js -c -m -o ./js/min1.js
-        echo "Terser Done"
+      run: npx terser ./js/init.js ./js/malla.js ./js/ramo.js -c -m -o ./js/min1.js
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
