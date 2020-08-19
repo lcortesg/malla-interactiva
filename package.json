@@ -1,0 +1,25 @@
+{
+  "name": "malla-interactiva",
+  "version": "1.4.2",
+  "description": "Página que permite interactuar con las mallas de la USM",
+  "main": "serviceWorker.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CsarMan/malla-interactiva.git"
+  },
+  "author": "César Paulangelo (BooterMan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CsarMan/malla-interactiva/issues"
+  },
+  "homepage": "https://github.com/CsarMan/malla-interactiva#readme",
+  "dependencies": {
+    "terser": "^5.2.0"
+  }
+}
