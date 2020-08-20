@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Minify:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,12 +26,15 @@ jobs:
     - name: Run a one-line script
       run: |
         npx terser ./js/init.js ./js/malla.js ./js/ramo.js -c -m -o ./js/min1.js
-         terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/selectableRamo.js ./js/semesterManager.js ./js/priorix.js ./js/mallaEditor.js -c -m -o ./js/min2.js
-         terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/selectableRamo.js ./js/semesterManager.js ./js/generator.js ./js/mallaEditor.js -c -m -o ./js/min3.js
-         terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/customMalla.js -c -m -o ./js/min4.js 
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        npx terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/selectableRamo.js ./js/semesterManager.js ./js/priorix.js ./js/mallaEditor.js -c -m -o ./js/min2.js
+        npx terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/selectableRamo.js ./js/semesterManager.js ./js/generator.js ./js/mallaEditor.js -c -m -o ./js/min3.js
+        npx terser ./js/init.js ./js/malla.js ./js/ramo.js ./js/customMalla.js -c -m -o ./js/min4.js 
+    - name: Commit Changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        message: "Minifief .js files"
+        add: "min*.js"
+      env:
+      # This is necessary in order to push a commit to the repo
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+      # Runs a set of commands using the runners shell
