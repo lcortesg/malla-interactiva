@@ -23,6 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1.4.3
     # Runs a single command using the runners shell
+    - run: ls
     - name: Run a one-line script
       run: |
         npx terser ./js/init.js ./js/malla.js ./js/ramo.js -c -m -o ./js/min1.js
@@ -33,7 +34,7 @@ jobs:
       uses: EndBug/add-and-commit@v4
       with:
         message: "Minifief .js files"
-        add: "*.js"
+        add: "*"
       env:
       # This is necessary in order to push a commit to the repo
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
