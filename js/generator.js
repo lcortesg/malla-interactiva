@@ -160,6 +160,7 @@ class Generator extends SemesterManager {
             if (Object.keys(subjectsNotFound).length !== 0) {
                 console.log(subjectsNotFound)
                 let toast = $('.toast')
+                console.log("example")
                 toast.toast('show')
                 let list = d3.select('#deletedSubjects').append('ul')
                 Object.keys(subjectsNotFound).forEach(sem => {
